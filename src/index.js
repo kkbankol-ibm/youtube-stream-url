@@ -37,7 +37,8 @@ const getInfo = async ({ url }) => {
             videoDetails: parsedResponse.videoDetails || {},
             formats: (streamingData.formats || []).concat(streamingData.adaptiveFormats || []).filter(format => format.url)
         }
-    } catch {
+    } catch(error) {
+        print(error)
         return false
         //Do nothing here
     }
